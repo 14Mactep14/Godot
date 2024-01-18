@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwm6qx686u73n"]
+
+[ext_resource type="Texture2D" uid="uid://ddk00a0gs88y0" path="res://pictures/png-transparent-mario-floating-floating-heroes-video-game (1).png" id="1_vtkc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni8nu"]
+size = Vector2(676, 187)
+
+[node name="Platform1" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ni8nu")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.827174, 0.741218)
+texture = ExtResource("1_vtkc2")

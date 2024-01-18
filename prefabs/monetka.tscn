@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://7it0dy7173nu"]
+
+[ext_resource type="Script" path="res://scripts/Area2D.gd" id="1_cvtin"]
+[ext_resource type="Texture2D" uid="uid://3ifbmyvswdwt" path="res://pictures/монетка для 2д игр и не только (1).png" id="2_aeaqa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwnwy"]
+radius = 111.445
+
+[node name="monetka" type="Area2D"]
+script = ExtResource("1_cvtin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.846847, 0.803965)
+texture = ExtResource("2_aeaqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.846847, 0.803965)
+shape = SubResource("CircleShape2D_jwnwy")

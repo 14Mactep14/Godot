@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://1630l1ta7lng"]
+
+[ext_resource type="Script" path="res://scripts/Portal.gd" id="1_k0os8"]
+[ext_resource type="Texture2D" uid="uid://bepuw2xs3o76x" path="res://pictures/monday left be bloken lol xd best stupid ahahahah meme lol ahvhv.jpg" id="2_uffvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iht3a"]
+size = Vector2(482, 359)
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_k0os8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uffvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iht3a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

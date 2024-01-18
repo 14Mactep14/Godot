@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmw1nh6vo0c55"]
+
+[ext_resource type="PackedScene" uid="uid://cwm6qx686u73n" path="res://prefabs/platform_1.tscn" id="1_knc60"]
+[ext_resource type="PackedScene" uid="uid://bgfv4cw6c0u76" path="res://prefabs/player.tscn" id="2_ucxc8"]
+[ext_resource type="Texture2D" uid="uid://dm8cdm2egwu73" path="res://pictures/поля зелёные.jpg" id="3_mr3cg"]
+[ext_resource type="PackedScene" uid="uid://7it0dy7173nu" path="res://prefabs/monetka.tscn" id="4_sdsd0"]
+[ext_resource type="PackedScene" uid="uid://tfq0uijf5m7u" path="res://prefabs/platform_2.tscn" id="5_c1kgb"]
+[ext_resource type="PackedScene" uid="uid://dq2su2fubf38g" path="res://prefabs/platform_3.tscn" id="6_gt522"]
+[ext_resource type="PackedScene" uid="uid://badxrll334t2q" path="res://prefabs/barrier.tscn" id="7_ulkpy"]
+[ext_resource type="PackedScene" uid="uid://1630l1ta7lng" path="res://prefabs/portal.tscn" id="8_xhgy6"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="9_j4lh5"]
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = []
+
+[node name="Platform1" parent="." instance=ExtResource("1_knc60")]
+position = Vector2(509, 611)
+
+[node name="Player" parent="." instance=ExtResource("2_ucxc8")]
+position = Vector2(464, 357)
+
+[node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-706, -556)
+scale = Vector2(11.5025, 11.4393)
+texture = ExtResource("3_mr3cg")
+centered = false
+
+[node name="monetka" parent="." instance=ExtResource("4_sdsd0")]
+position = Vector2(1695, 474)
+
+[node name="Platform2" parent="." instance=ExtResource("5_c1kgb")]
+position = Vector2(1722, 843)
+
+[node name="Platform3" parent="." instance=ExtResource("6_gt522")]
+
+[node name="Barrier" parent="." instance=ExtResource("7_ulkpy")]
+position = Vector2(3925, 506)
+
+[node name="Portal" parent="." instance=ExtResource("8_xhgy6")]
+position = Vector2(370, 2159)
+
+[node name="Platform5" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(4484, 1813)
+
+[node name="Platform4" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(2925, 854)
+
+[node name="Platform6" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(3925, 772)
+
+[node name="Platform7" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(5140, 1152)
+
+[node name="Platform8" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(1556, 2539)
+
+[node name="Platform9" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(2335, 2203)
+
+[node name="Platform10" parent="." instance=ExtResource("6_gt522")]
+position = Vector2(3427, 2086)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 50.0
+offset_bottom = 25.0
+scale = Vector2(4.50781, 5.8675)
+text = "coins:
+"
+script = ExtResource("9_j4lh5")
+
+[connection signal="body_entered" from="monetka" to="monetka" method="_on_body_entered"]
+[connection signal="body_entered" from="Barrier" to="Barrier" method="_on_body_entered"]
